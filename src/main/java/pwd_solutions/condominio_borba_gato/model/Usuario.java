@@ -6,10 +6,10 @@ import jakarta.persistence.*;
 public class Usuario {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(nullable = false, columnDefinition = "VARCHAR(255) NOT NULL")
-    private String nome_completo;
+    @Column(nullable = false)
+    private String nome;
     @Column(nullable = false)
     private String senha;
     @Column(nullable = false, unique = true)
@@ -19,7 +19,11 @@ public class Usuario {
     @Column(nullable = false)
     private boolean isProprietario;
     @Column(nullable = false, unique = true)
-    private String apartamento;
+    private Integer apartamento;
+    @Column(nullable = false)
+    private String nomeProprietario;
+    @Column(nullable = true, unique = true)
+    private String matricula;
     @Column(nullable = false)
     private String role;
 
@@ -31,12 +35,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getNome_completo() {
-        return nome_completo;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNome_completo(String nome_completo) {
-        this.nome_completo = nome_completo;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getSenha() {
@@ -71,12 +75,28 @@ public class Usuario {
         isProprietario = proprietario;
     }
 
-    public String getApartamento() {
+    public Integer getApartamento() {
         return apartamento;
     }
 
-    public void setApartamento(String apartamento) {
+    public void setApartamento(Integer apartamento) {
         this.apartamento = apartamento;
+    }
+
+    public String getNomeProprietario() {
+        return nomeProprietario;
+    }
+
+    public void setNomeProprietario(String nomeProprietario) {
+        this.nomeProprietario = nomeProprietario;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
     public String getRole() {
