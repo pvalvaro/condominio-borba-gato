@@ -1,2 +1,2 @@
-# condomio-borba-gato
+# condominio-borba-gato
 Sistema de Gestão de um Condominio
